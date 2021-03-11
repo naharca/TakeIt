@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from '../../logo/take_it.png';
+import logo from '../../logo/take_it.svg';
 import '.././NavBar/NavBar.css';
 import CartWidget from '../CartWidget/CartWidget';
 
@@ -26,7 +26,9 @@ function NavBar() {
             <a class="nav-link" href="#" tabindex="-1" >Sign In</a>
           </li>
         </ul>
+        <a href="#">
         < CartWidget />
+        </a>
       </nav>
     </div>
   );
