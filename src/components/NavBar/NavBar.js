@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from '../../logo/take_it.svg';
+import logo from '../../assets/logo/take_it.svg';
 import '.././NavBar/NavBar.css';
 import CartWidget from '../CartWidget/CartWidget';
 

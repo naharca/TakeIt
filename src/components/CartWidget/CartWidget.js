@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import cartIcon from "../../icons/cartIcon.png";
+import cartIcon from "../../assets/icons/cartIcon.png";
 import './CartWidget.css';
 
 function CartWidget() {
