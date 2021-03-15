@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import cartIcon from "../../assets/icons/cartIcon.png";
 import './CartWidget.css';
 
