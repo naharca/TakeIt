@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, {  useState } from 'react';
 import ItemCount from '../components/ItemCount/ItemCount';
 
 
 const ItemCountContainer = () => {
-    const [actualStock, setActualStock] = useState(10);
+    const [actualStock, setActualStock] = useState(5);
 
     const substractStock = (e,newStock) => {
         e.preventDefault();
@@ -13,7 +13,7 @@ const ItemCountContainer = () => {
 
     
     return (
-        <div className="App">
+        <div className="CounterContainer">
             <ItemCount stock={actualStock}  initial={1} onAdd={substractStock}/>
 
         </div>
@@ -21,3 +21,4 @@ const ItemCountContainer = () => {
 };
 
  export default ItemCountContainer;
+

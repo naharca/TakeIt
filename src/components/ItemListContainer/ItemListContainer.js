@@ -8,7 +8,6 @@ const ItemListContainer = (props) => (
         <h1>Container</h1>
         <ItemList items={props.items}/>
     </div>
-
 );
 
 export default ItemListContainer;

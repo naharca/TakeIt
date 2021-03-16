@@ -3,15 +3,17 @@ import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import NavBar from './components/NavBar/NavBar';
 import ItemCountContainer from './containers/ItemCountContainer';
 import { useEffect, useState } from "react";
+import productItems from './productItems.json';
 
 
 function App() {
+  
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    new Promise((okay, bad) => {
+    new Promise((resolve, reject) => {
       setTimeout(() => {
-        okay(["Model","Description","Brand","Price"]);
+        resolve(productItems);
       }, 2000);
 
     }).then((result) => setItems(result))
@@ -22,7 +24,7 @@ function App() {
     <div className="App">
 
       <NavBar />
-      <ItemListContainer   items={items}/>
+      <ItemListContainer items={items} />
       <ItemCountContainer />
     </div>
 

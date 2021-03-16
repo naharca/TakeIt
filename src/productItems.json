@@ -1,0 +1,47 @@
+[
+  {
+    "id": "product-1",
+    "name": "Apple Macbook Air 13",
+    "ram": "8GB",
+    "core": "I5",
+    "screen_size": "13 inch",
+    "price_USD": 850,
+    "picture": "Macbook"
+  },
+  {
+    "id": "product-2",
+    "name": "Notebook Dell Inspiron 15",
+    "ram": "8GB",
+    "core": "I5",
+    "screen_size": "15.6 inch",
+    "price_USD": 650,
+    "picture": "Dell"
+  },
+  {
+    "id": "product-3",
+    "name": "Notebook Hp 15",
+    "ram": "8GB",
+    "core": "I5",
+    "screen_size": "15.6 inch",
+    "price_USD": 780,
+    "picture": "Hp"
+  },
+  {
+    "id": "product-4",
+    "name": "Notebook Lenovo Ideapad Flex 5",
+    "ram": "8GB",
+    "core": "I3",
+    "screen_size": "14 inch",
+    "price_USD": 500,
+    "picture": "Lenovo"
+  },
+  {
+    "id": "product-5",
+    "name": "Notebook Acer R53550h Nitro 5 ",
+    "ram": "8GB",
+    "core": "Ryzen 5",
+    "screen_size": "15 inch",
+    "price_USD": 850,
+    "picture": "Acer"
+  }
+]
