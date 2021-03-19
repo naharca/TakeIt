@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import "../ItemListContainer/ItemListContainer.css"
 import ItemCount from '../ItemCount/ItemCount';
-import ItemList from '../ItemList/ItemList'
+import ItemList from '../ItemList/ItemList';
 
   
   
@@ -24,13 +24,11 @@ const ItemListContainer = (props) => {
         
          
     }
-
-    
     return (
         <>
-        <div className="CounterContainer">
+        <div className="Counter-container">
         <h3>
-                {props.items ? '' : props.greeting}
+                {props.items ? '' : props.item}
             </h3>
             <ItemList items={props.items} />
             <ItemCount stock={actualStock}  initial={1} onAdd={changeStock} />

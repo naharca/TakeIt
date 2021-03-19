@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "../ItemCount/ItemCount.css"
 
 const ItemCount = ({ stock, initial, onAdd }) => {
 
@@ -13,16 +14,17 @@ const ItemCount = ({ stock, initial, onAdd }) => {
             <div>
                 <h2>Stock: {stock}</h2>
                 {stock
-                    ? 
-                    <div>
-                        <button onClick={() => setCounter(counter > initial ? counter - 1 : counter)}>-</button>
+                    ?
+                    <div className="counter-buttons-container">
+                        <button type="button" className="btn btn-operator btn-secondary btn-sm" onClick={() => setCounter(counter > initial ? counter - 1 : counter)}> - </button>
                         <label>{counter}</label>
-                        <button onClick={() => setCounter(counter < stock ? counter + 1 : counter)}>+</button>
+                        <button type="button" className="btn btn-operator btn-secondary btn-sm" onClick={() => setCounter(counter < stock ? counter + 1 : counter)}> + </button>
                     </div>
-                    : 
-                    <label>No hay stock</label>
+                    :
+                    <div class="alert alert-info" role="alert">
+                        OOPS! We are sorry... <a href="#" class="alert-link">######</a>. We run out of stock for this product.  </div>
                 }
-                <button disabled={!stock} onClick={() => addToCart()}>Add to cart</button>
+                <button type="button" className="btn btn-primary btn-md" disabled={!stock} onClick={() => addToCart()}>Add to cart</button>
             </div>
         </>
     )
