@@ -1,5 +1,5 @@
 import './Item.css';
-// import ItemDetailContainer from '../ItemDetailContainer/ItemDetailContainer';
+import ItemDetailContainer from '../ItemDetailContainer/ItemDetailContainer';
 
 function Item({ item }) {
 
