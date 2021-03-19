@@ -13,7 +13,7 @@ function App() {
     new Promise((resolve, reject) => {
       setTimeout(() => {
         resolve(productItems);
-      }, 2000);
+      }, 1000);
 
     }).then((result) => setItems(result))
 

@@ -1,8 +1,5 @@
-import Item from '../Item/Item';
-import productItems from '../../productItems.json';
 
-
-const ItemDetail = (item) => {
+const ItemDetail = ({item}) => {
 
     return (
             <div className="item" id={item.id} >

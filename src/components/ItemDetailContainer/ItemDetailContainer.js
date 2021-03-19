@@ -1,26 +1,29 @@
 import React, { useEffect, useState } from 'react';
-import Item from '../Item/Item';
 import ItemDetail from '../ItemDetail/ItemDetail';
 import productItems from '../../productItems.json';
-import Itemdetail from '../ItemDetail/ItemDetail';
 
 
 
-const ItemDetailContainer = (props) => {
+const ItemDetailContainer = () => {
     const [item, setItem]= useState({})
+    const [ product ] = productItems.filter( item => item.id === 'product-1' );
 
     useEffect(() => {
+        
+      
 
 
         new Promise((resolve, reject) => {
             setTimeout(() => {
-                resolve([ productItems.filter( item => item.id === 'product-1' ) ]);
+                resolve(product);
             }, 2000);
 
         }).then((result) => setItem(result))
         
 
-    }, []);
+    }, [product]);
+
+    return <ItemDetail item={ item } />
 
     
 
