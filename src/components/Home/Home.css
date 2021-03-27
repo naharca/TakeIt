@@ -1,0 +1,10 @@
+.jumbotron {
+    margin: 1.5rem;
+    background-image: url("https://emerging-europe.com/wp-content/uploads/2018/11/bigstock-abstract-technology-background-250119211.jpg");
+    background-size: cover;
+    
+}
+ .welcoming-text{
+     font-size: 1.5rem;
+     color: rgba(236, 229, 229, 0.856);
+ }

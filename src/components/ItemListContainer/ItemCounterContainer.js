@@ -6,6 +6,7 @@ import ItemList from '../ItemList/ItemList';
   
   
 const ItemListContainer = (props) => {
+    
   
 
     const [actualStock, setActualStock] = useState(5);
@@ -14,14 +15,12 @@ const ItemListContainer = (props) => {
        
         if (newStock <= actualStock){
             setActualStock (actualStock => actualStock - newStock);
+            alert("You added a product to the cart");
         }
         else{
             alert('Sorry, the quantity its not available');
 
-            
-
-        }
-        
+        }  
          
     }
     return (

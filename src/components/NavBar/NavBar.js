@@ -1,4 +1,5 @@
-import React  from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import logo from '../../assets/logo/take_it.svg';
 import '.././NavBar/NavBar.css';
 import CartWidget from '../CartWidget/CartWidget';
@@ -12,23 +13,33 @@ function NavBar() {
           <img src={logo} className="navbar__logo remove-bg" alt="logo" />
         </a>
 
-        <ul class="nav justify-content-center">
-          <li class="nav-item">
-            <a class="nav-link active" href="#">Home</a>
+        <ul className="nav justify-content-center">
+          <li className="nav-item">
+            <Link to="/" className="nav-link active" >Home</Link>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Products</a>
+
+          <li className="nav-item dropdown">
+            <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Products
+        </a>
+            <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+              <Link to='/category/Notebook' class="dropdown-item"><p>Notebooks</p></Link>
+              <Link to='/category/HDD' class="dropdown-item"><p>HDD's</p></Link>
+              <div className="dropdown-divider"></div>
+              <Link className="dropdown-item"><p>Go to category</p></Link>
+            </div>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Cart</a>
+          <li className="nav-item">
+            <Link to="/" className="nav-link" >Cart</Link>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#" tabindex="-1" >Sign In</a>
+          <li className="nav-item">
+            <Link  to="/" className="nav-link" tabindex="-1" >Sign In</Link>
           </li>
         </ul>
-        <a href="#">
-        < CartWidget />
-        </a>
+        <Link>
+          < CartWidget />
+        </Link>
+
       </nav>
     </div>
   );

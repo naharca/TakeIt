@@ -1,5 +1,6 @@
+import React from 'react';
 import Item from '../Item/Item';
-import '../ItemList/ItemList.css'
+import '../ItemList/ItemList.css';
 
 const ItemList = (props) => {
 
@@ -7,7 +8,7 @@ const ItemList = (props) => {
         <>
             <div clasName='item-list'>
 
-                <h1>Our Products</h1>
+                <h1>Products</h1>
                 <ul> {
                     props.items.map(
                         item => <Item key={item.id} item={item} />

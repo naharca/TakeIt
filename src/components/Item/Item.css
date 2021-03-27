@@ -23,3 +23,22 @@
   display: flex;
   justify-content: left;
 }
+/*BUTTONS*/
+
+.btn {
+  margin: 1rem;
+  background-color: rgba(51, 25, 122, 0.836);
+  border-color: transparent;
+  
+}
+
+.btn:hover {
+  background-color:  rgba(241, 107, 12, 0.952);
+  border-color: transparent;
+}
+
+.btn-primary {
+  margin-top: 0.2rem;
+  border-color: transparent;
+  border-radius: 1.8rem;
+}

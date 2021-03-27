@@ -6,7 +6,7 @@ import productItems from '../../productItems.json';
 
 const ItemDetailContainer = () => {
     const [item, setItem]= useState({})
-    const [ product ] = productItems.filter( item => item.id === 'product-1' );
+    const [ product ] = productItems.filter( item => item.id === 'product-3' );
 
     useEffect(() => {
         

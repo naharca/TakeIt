@@ -1,21 +1,16 @@
+import React from 'react';
 import './Item.css';
 
 
-function Item({ item }) {
+function Item ({item}) {
 
     return (
         <div className="item" id={item.id} >
             <img className="item-picture" src={item.picture} alt={item.name} />
             <div className="card-body">
                 <h5 className="product-name">{item.name}</h5>
-                {/* <div className="product-description">
-                   <p> RAM : {item.ram}</p>
-                   <p> CORE : {item.core}</p>
-                   <p> SCREEN :{item.screen_size}</p>
-                   
-                <p className="price">PRICE:  {item.price_USD}$</p>
-                </div> */}
-                {/* <a href="#" className="btn btn-primary"></a> */}
+                <button className="btn btn-primary btn-md">Product Detail</button>
+                
             </div>
         </div>
 
