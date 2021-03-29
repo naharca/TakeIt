@@ -2,10 +2,9 @@ import {useState, useEffect} from 'react';
 import
  {BrowserRouter as Router,
     Switch,
-    Route,
-    Link
+    Route
 } from 'react-router-dom';
-import ItemListContainer from '../components/ItemListContainer/ItemCounterContainer';
+import ItemListContainer from '../components/ItemListContainer/ItemListContainer';
 import NavBar from '../components/NavBar/NavBar';
 import productItems from '../productItems.json';
 import Home from '../components/Home/Home';

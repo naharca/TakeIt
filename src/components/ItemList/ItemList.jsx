@@ -3,11 +3,9 @@ import Item from '../Item/Item';
 import '../ItemList/ItemList.css';
 
 const ItemList = (props) => {
-
     return (
         <>
-            <div clasName='item-list'>
-
+            <div className='item-list'>
                 <h1>Products</h1>
                 <ul> {
                     props.items.map(
@@ -15,7 +13,6 @@ const ItemList = (props) => {
                     )
                 }
                 </ul>
-
             </div>
         </>
     )

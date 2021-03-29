@@ -9,9 +9,9 @@ function NavBar() {
   return (
     <div>
       <nav className="navbar">
-        <a href="index.html">
+        <Link to="/">
           <img src={logo} className="navbar__logo remove-bg" alt="logo" />
-        </a>
+        </Link>
 
         <ul className="nav justify-content-center">
           <li className="nav-item">
@@ -19,24 +19,21 @@ function NavBar() {
           </li>
 
           <li className="nav-item dropdown">
-            <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Products
-        </a>
+            <button className="nav-link dropdown-toggle border-0 bg-transparent" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Products </button>
             <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-              <Link to='/category/Notebook' class="dropdown-item"><p>Notebooks</p></Link>
-              <Link to='/category/HDD' class="dropdown-item"><p>HDD's</p></Link>
-              <div className="dropdown-divider"></div>
-              <Link className="dropdown-item"><p>Go to category</p></Link>
+              <Link to='/category/Notebook' className="dropdown-item"><p>Notebooks</p></Link>
+              <Link to='/category/HDD' className="dropdown-item"><p>HDD's</p></Link>
             </div>
           </li>
           <li className="nav-item">
-            <Link to="/" className="nav-link" >Cart</Link>
+            <Link to="/cart" className="nav-link" >Cart</Link>
           </li>
           <li className="nav-item">
-            <Link  to="/" className="nav-link" tabindex="-1" >Sign In</Link>
+            <Link to="/sign-in" className="nav-link" tabIndex="-1" >Sign In</Link>
           </li>
         </ul>
-        <Link>
+        <Link to="/cart">
           < CartWidget />
         </Link>
 
