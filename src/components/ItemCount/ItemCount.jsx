@@ -15,7 +15,7 @@ const ItemCount = ({ stock, value, onAdd, onSubstract }) => {
                         <button type="button" className="btn btn-operator btn-secondary btn-sm" onClick={(e) => onAdd(e)}> + </button>
                     </div>
                     :
-                    <div className="alert alert-info" role="alert">
+                    <div className="alert alert-info shadow" role="alert">
                         <p>No more in stock</p>
                     </div>
                 }

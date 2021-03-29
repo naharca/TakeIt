@@ -29,17 +29,17 @@ const ItemDetail = ({ item }) => {
         <div className="item" id={item.id} >
             <img className="item-picture" src={item.picture} alt={item.name} />
             <ItemCount stock={item.stock} value={itemsQty} onAdd={onAdd} onSubstract={onSubstract} />
-            <button type="button" className="btn btn-primary btn-md" hidden={!item.stock} onClick={() => addToCart()}>Add to cart</button>
+            <button type="button" className="btn btn-primary btn-md shadow-lg" hidden={!item.stock} onClick={() => addToCart()}>Add to cart</button>
             
             
             <div className="card-body">
                 <h5 className="product-name">{item.name}</h5>
                 <div className="product-description">
-                    <p> TYPE : {item.Type}</p>
+                    <p> Type : {item.Type}</p>
                     <p> RAM : {item.ram}</p>
-                    <p> CORE : {item.core}</p>
-                    <p> SCREEN :{item.screen_size}</p>
-                    <p> STOCK :{item.stock}</p>
+                    <p> Core : {item.core}</p>
+                    <p> Screen :{item.screen_size}</p>
+                    <p> Stock :{item.stock}</p>
 
                     <p className="price">PRICE:  {item.price_USD}$</p>
                 </div>

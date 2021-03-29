@@ -13,7 +13,7 @@ const ItemDetailContainer = () => {
             new Promise((resolve, reject) => {
             setTimeout(() => {
                 resolve(product);
-            }, 500);
+            }, 0.000);
 
         }).then((result) => setItem(result))
    }, [product, id]);
