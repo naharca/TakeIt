@@ -1,30 +1,25 @@
-import React, { useState } from "react";
 import "../ItemCount/ItemCount.css"
 
-const ItemCount = ({ stock, initial, onAdd }) => {
+const ItemCount = ({ stock, value, onAdd, onSubstract }) => {
 
-    const [counter, setCounter] = useState(initial);
-
-    const addToCart = () => {
-        onAdd(counter);
-        setCounter(initial);
-    }
+    
     return (
         <>
             <div>
-                <h2>Stock: {stock}</h2>
+            <p>Stock:{stock}</p>
                 {stock
                     ?
                     <div className="counter-buttons-container">
-                        <button type="button" className="btn btn-operator btn-secondary btn-sm" onClick={() => setCounter(counter > initial ? counter - 1 : counter)}> - </button>
-                        <label>{counter}</label>
-                        <button type="button" className="btn btn-operator btn-secondary btn-sm" onClick={() => setCounter(counter < stock ? counter + 1 : counter)}> + </button>
+                        <button type="button" className="btn btn-operator btn-secondary btn-sm" onClick={(e) => onSubstract(e)}> - </button>
+                        <label>{value}</label>
+                        <button type="button" className="btn btn-operator btn-secondary btn-sm" onClick={(e) => onAdd(e)}> + </button>
                     </div>
                     :
-                    <div class="alert alert-info" role="alert">
-                        OOPS! We are sorry... <a href="#" class="alert-link">######</a>. We run out of stock for this product.  </div>
+                    <div className="alert alert-info" role="alert">
+                        <p>No more in stock</p>
+                    </div>
                 }
-                <button type="button" className="btn btn-primary btn-md" disabled={!stock} onClick={() => addToCart()}>Add to cart</button>
+                
             </div>
         </>
     )

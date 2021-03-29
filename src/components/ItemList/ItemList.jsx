@@ -6,6 +6,7 @@ const ItemList = (props) => {
     return (
         <>
             <div className='item-list'>
+                <hr />
                 <h1>Products</h1>
                 <ul> {
                     props.items.map(
