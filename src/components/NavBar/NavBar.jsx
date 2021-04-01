@@ -19,7 +19,7 @@ function NavBar() {
           </li>
 
           <li className="nav-item dropdown">
-            <button className="nav-link dropdown-toggle border-0 bg-transparent" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button className="nav-link  border-0 bg-transparent" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Products </button>
             <div className="dropdown-menu" aria-labelledby="navbarDropdown">
               <Link to='/category/Notebook' className="dropdown-item"><p>Notebooks</p></Link>
