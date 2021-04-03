@@ -26,6 +26,7 @@ const RouterApp = () => {
   });
 
     return (
+      
         <Router>
         <div>
             <NavBar />
@@ -45,6 +46,7 @@ const RouterApp = () => {
             <Footer />
         </div>
         </Router>
+      
     )
 }
 
