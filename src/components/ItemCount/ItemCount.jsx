@@ -1,8 +1,13 @@
+import { useContext } from "react";
+import CartContext from "../../Context/CartContext";
 import "../ItemCount/ItemCount.css"
 
 const ItemCount = ({ stock, value, onAdd, onSubstract }) => {
 
-    
+    const Context =useContext(CartContext);
+    console.log(Context);
+
+
     return (
         <>
             <div>

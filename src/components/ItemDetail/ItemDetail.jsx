@@ -23,6 +23,7 @@ const ItemDetail = ({ item }) => {
         setItemsQty(itemsQty > initial ? itemsQty - 1 : itemsQty)
     };
 
+   
 
 
     return (
