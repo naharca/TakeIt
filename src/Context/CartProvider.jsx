@@ -3,32 +3,53 @@ import CartContext from "./CartContext";
 
 
 const CartProvider = ({ defaultValue = [], children }) =>{
-    // Declaro el mismo estado que en clase declaramos en CoderApp.js, con su correspondiente importación
+  
     const [cart, setCart] = useState(defaultValue);
     console.log(cart)
-    // Porque vamos a declarar no uno sino cuatro HELPERS (Funciones de JS)
-    const addItem = ( item, quantity ) =>{
-        //Como lo vimos en clase (en el componente CounterContainer)
+  
+    const addItem = ( item, quantity ) => {
+        let adding = isInCart(item.id);
+        if (adding >= 0){
+            let updatedCart = cart;
+            updatedCart[adding] = {item, quantity: updatedCart[adding].quantity};
+            setCart(updatedCart)
+        } else { 
+       
         setCart([
             ...cart, 
             { item, quantity }
         ]);
+    } 
+
     };
-    const removeItem = (itemId) => {
-        // Acá podríamos hacer un filter...
-        console.log(`Se ha quitado el producto con id ${itemId}`);
+    const removeItem = (adding) => {
+        let updatedCart = cart;
+        updatedCart.splice(adding, 1);
+        setCart(updatedCart);
+        
+        console.log(`Se ha quitado el producto con id ${adding}`);
     };
     const clear = () => {
-        // Aca limpiamos nuestro contexto tendriamos que volver a setear el valor por defecto.
+        setCart([]);
+
         console.log('Se limpio el carrito. Ahora no hay productos.');
     };
+
     const isInCart = (id) =>{
-        //Aca podríamos hacer un find en array, si lo encuentra se retorna true sino false
+        const cartLength = cart.length;
+        if(cartLength === 0){
+            return -1;
+        } else {
+            for (let i = 0; i < cartLength; i++){
+                if (cart[i].item.id === id){
+                    return i;
+                }
+            }
+        }
+        
         console.log('Estamos buscando el producto')
     };
-    // Ahora vamos a llamar nuestro context creado, CartContext, exactamente de igual manera que hicimos en CoderApp.js
-    // y pasamos como valores del contexto la variable cart y los 4 helpers
-    // También se están pasando los componentes hijos (childrens) que se heredan de las props
+  
     return(
         <CartContext.Provider value={{ cart, addItem, removeItem, clear, isInCart}} >
             { children }
