@@ -1,59 +1,54 @@
 import { useState } from "react";
 import CartContext from "./CartContext";
 
+const CartProvider = ({ defaultValue = [], children }) => {
+  const [cart, setCart] = useState(defaultValue);
+  console.log(cart);
 
-const CartProvider = ({ defaultValue = [], children }) =>{
-  
-    const [cart, setCart] = useState(defaultValue);
-    console.log(cart)
-  
-    const addItem = ( item, quantity ) => {
-        let adding = isInCart(item.id);
-        if (adding >= 0){
-            let updatedCart = cart;
-            updatedCart[adding] = {item, quantity: updatedCart[adding].quantity};
-            setCart(updatedCart)
-        } else { 
-       
-        setCart([
-            ...cart, 
-            { item, quantity }
-        ]);
-    } 
-
+  const addItem = (product, quantity) => {
+    let prod = cart.findIndex(item => item.id === product.id)
+    if (prod !== -1) {
+        alert("This product has been already added")
+    } else {
+        setCart([...cart, {
+            "id": product.id,
+            "name": product.name,
+            "Type": product.Type,
+            "price_USD": product.price_USD,
+            "quantity": quantity
+        }]);
     };
-    const removeItem = (adding) => {
-        let updatedCart = cart;
-        updatedCart.splice(adding, 1);
-        setCart(updatedCart);
+};
+  const removeItem = (id) => {
+    setCart(cart.filter(({ item }) => item.id !== id ));
+
+    console.log(`item removed using id  ${id}`);
+  };
+  const clear = () => {
+    setCart([]);
+
+    console.log("Your cart its clean now");
+  };
+
+  const isInCart = (id) => {
+
+    const product = cart.find (item => item.id === id);
+    if(product){
+        return true; 
+    } else {
+        return false;
         
-        console.log(`Se ha quitado el producto con id ${adding}`);
     };
-    const clear = () => {
-        setCart([]);
+     
+    
+  };
 
-        console.log('Se limpio el carrito. Ahora no hay productos.');
-    };
-
-    const isInCart = (id) =>{
-        const cartLength = cart.length;
-        if(cartLength === 0){
-            return -1;
-        } else {
-            for (let i = 0; i < cartLength; i++){
-                if (cart[i].item.id === id){
-                    return i;
-                }
-            }
-        }
-        
-        console.log('Estamos buscando el producto')
-    };
-  
-    return(
-        <CartContext.Provider value={{ cart, addItem, removeItem, clear, isInCart}} >
-            { children }
-        </CartContext.Provider>
-    );
+   return (
+    <CartContext.Provider
+      value={{ cart, addItem, removeItem, clear, isInCart }}
+    >
+      {children}
+    </CartContext.Provider>
+  );
 };
 export default CartProvider;

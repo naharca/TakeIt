@@ -1,5 +1,5 @@
-p{
-  color:rgba(63, 59, 59, 0.808);
+p {
+  color: rgba(63, 59, 59, 0.808);
   font-size: 1rem;
   font-weight: 500;
 }
@@ -18,13 +18,12 @@ p{
   mix-blend-mode: multiply;
 }
 
-.nav-link{
+.nav-link {
   display: flex;
   justify-content: space-between;
-  font-family:fantasy;
+  font-family: fantasy;
   font-weight: 200;
   color: rgba(74, 24, 121, 0.911);
-  
 }
 
 .nav-item :hover {
