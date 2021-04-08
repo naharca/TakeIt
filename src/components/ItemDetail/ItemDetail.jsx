@@ -2,6 +2,7 @@ import { useState, useContext } from 'react';
 import { Link } from "react-router-dom";
 import ItemCount from '../ItemCount/ItemCount';
 import CartContext from "../../Context/CartContext";
+import './ItemDetail.css'
 
 
 const ItemDetail = ({ item }) => {
@@ -41,14 +42,14 @@ const ItemDetail = ({ item }) => {
             
             <div className="card-body">
                 <h5 className="product-name">{item.name}</h5>
-                <div className="product-description">
+                <div className="product-description shadow-sm">
                     <p> Type : {item.Type}</p>
                     <p> RAM : {item.ram}</p>
                     <p> Core : {item.core}</p>
                     <p> Screen :{item.screen_size}</p>
                     <p> Stock :{item.stock}</p>
 
-                    <p className="price">PRICE:  {item.price_USD}$</p>
+                    <p className="price">Price:  {item.price_USD}$</p>
                 </div>
                 {/* <a href="#" className="btn btn-primary"></a> */}
             </div> 
