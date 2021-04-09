@@ -13,7 +13,9 @@ const CartProvider = ({ defaultValue = [], children }) => {
         setCart([...cart, {
             "id": product.id,
             "name": product.name,
+            "picture": product.picture,
             "Type": product.Type,
+            "stock": product.stock,
             "price_USD": product.price_USD,
             "quantity": quantity
         }]);

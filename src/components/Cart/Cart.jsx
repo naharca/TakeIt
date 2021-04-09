@@ -1,13 +1,13 @@
 import React from "react";
-import {useContext} from 'react';
+import { useContext} from "react";
 import { Link } from "react-router-dom";
-import CartContext from '../../Context/CartContext';
+import CartContext from "../../Context/CartContext";
 import returnIcon from "../../assets/icons/returnIcon.png";
 import deleteIcon from "../../assets/icons/deleteIcon.png";
 import ItemCount from "../ItemCount/ItemCount";
+import "./Cart.css";
 
-
-function Cart ()  {
+function Cart() {
   const context = useContext(CartContext);
 
   const onAdd = (e, item, quantity) => {
@@ -17,46 +17,44 @@ function Cart ()  {
   const onSubstract = (e, item, quantity) => {
     context.substractItem(e, item, quantity);
   };
+  
 
   return (
     <div>
-      <div className="shop">
-        <Link to="/" className="return-link">
-          <img src= {returnIcon} className="retun-icon" alt="return arrow" />
-          <span className="retun-link-text">BACK</span>
-        </Link>
-      </div>
       <div className="appear" hidden={context.cart.length !== 0}>
         <h1>Go and pick something</h1>
+        <div className="shop">
+          <Link to="/" className="return-link">
+            <img src={returnIcon} className="retun-icon" alt="return arrow" />
+            <button className="retun-link-text btn btn-primary ">
+              {" "}
+              GO BACK
+            </button>
+          </Link>
+        </div>
       </div>
+
       <div className="cart appear" hidden={context.cart.length === 0}>
         <div className="cart-header">
-          <span className="cart-title">YOUR ITEMS</span>{" "}
-          <button
-            onClick={() => {
-              context.clear();
-            }}
-            className="cart-clear btn btn-primary"
-          >
-            DELETE ALL
-          </button>
+          <h3 className="cart-title">YOUR SELECTION</h3>{" "}
         </div>
         <div>
-          {context.cart.map((item, pos) => {
+          {context.cart.map((item) => {
+            console.log(item.quantity);
+            console.log(item.stock);
             return (
-              <li key={item.id} className="cart-item">
+              <li key={item.id} className="item">
                 <img
-                  src= {item.picture}
+                  src={item.picture}
                   alt={item.Type}
-                  className="cart-item-img"
+                  className="item-picture"
                 />
-                <div className="item-description">
+                <div className="item">
                   <h3 className="item-type">{item.Type}</h3>
                   <div className="cart-item-actions">
-                    <span>Qty:</span>
-                    <ItemCount 
-                      min="0"
-                      max={item.stock}
+                    <ItemCount
+                      min={0}
+                      stock={item.stock}
                       value={item.quantity}
                       onAdd={(e) => {
                         onAdd(e, item, 1);
@@ -66,24 +64,55 @@ function Cart ()  {
                       }}
                       className="cart-input-number"
                     />
-                    <span className="price">Price: ${item.price_USD}</span>
-                    <span>Subtotal: ${item.price_USD * item.quantity}</span>
                     <button
                       onClick={() => {
-                        context.removeItem(pos);
+                        context.removeItem();
                       }}
-                      className="cart-item-remove"
+                      className="btn delete-icon-btn"
                     >
-                      <img src={deleteIcon} className="delete-icon" alt="delete button" />
+                      <img
+                        src={deleteIcon}
+                        className="delete-icon"
+                        alt="delete"
+                      />
                     </button>
+                    <p>Price: ${item.price_USD}</p>
+                    <p>Subtotal: ${item.price_USD * item.quantity}</p>
                   </div>
                 </div>
               </li>
             );
           })}
-          <div className="total"><span>Total</span></div>
+          <div className="total">
+            <span>Total</span>
+          </div>
         </div>
-        <Link to="/" className={`btn btn-primary ${context.cart.length === 0 ? 'disabled' : ''}`}>CHECKOUT </Link>
+        <div className="final-buttons">
+          <Link to="/" className="return-link">
+            <img src={returnIcon} className="retun-icon" alt="return arrow" />
+            <button className="retun-link-text btn btn-primary ">
+              {" "}
+              GO BACK
+            </button>
+          </Link>
+
+          <button
+            className="cart-clear btn btn-primary"
+            onClick={() => {
+              context.clear();
+            }}
+          >
+            DELETE ALL
+          </button>
+          <Link
+            to="/"
+            className={`btn btn-primary ${
+              context.cart.length === 0 ? "disabled" : ""
+            }`}
+          >
+            CHECKOUT{" "}
+          </Link>
+        </div>
       </div>
     </div>
   );

@@ -6,7 +6,7 @@ function CartWidget() {
   return (
 
     <div className="cart">
-        <img src={cartIcon} className="cart__icon remove-bg" alt="shopping cart" />
+        <img src={cartIcon} className="cart-icon remove-bg" alt="shopping cart" />
     </div>
 
   );
