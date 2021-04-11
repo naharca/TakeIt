@@ -10,12 +10,12 @@ import "./Cart.css";
 function Cart() {
   const context = useContext(CartContext);
 
-  const onAdd = (e, item, quantity) => {
-    context.addItem(e, item, quantity);
+  const onAdd = (item, quantity) => {
+    context.addItem(item, quantity);
   };
 
-  const onSubstract = (e, item, quantity) => {
-    context.substractItem(e, item, quantity);
+  const onSubstract = (item, quantity) => {
+    context.removeItem(item, quantity);
   };
   
 
@@ -34,7 +34,7 @@ function Cart() {
         </div>
       </div>
 
-      <div className="cart appear" hidden={context.cart.length === 0}>
+      <div className="cart " hidden={context.cart.length === 0}>
         <div className="cart-header">
           <h3 className="cart-title">YOUR SELECTION</h3>{" "}
         </div>
@@ -56,17 +56,17 @@ function Cart() {
                       min={0}
                       stock={item.stock}
                       value={item.quantity}
-                      onAdd={(e) => {
-                        onAdd(e, item, 1);
+                      onAdd={() => {
+                        onAdd(item, 1);
                       }}
-                      onSubstract={(e) => {
-                        onSubstract(e, item, 1);
+                      onSubstract={() => {
+                        onSubstract(item,  0);
                       }}
                       className="cart-input-number"
                     />
                     <button
                       onClick={() => {
-                        context.removeItem();
+                        context.removeItem(item.id);
                       }}
                       className="btn delete-icon-btn"
                     >

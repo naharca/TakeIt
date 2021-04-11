@@ -22,7 +22,7 @@ const CartProvider = ({ defaultValue = [], children }) => {
     };
 };
   const removeItem = (id) => {
-    setCart(cart.filter(({ item }) => item.id !== id ));
+    setCart(cart.filter(( item ) => item.id !== id ));
 
     console.log(`item removed using id  ${id}`);
   };
