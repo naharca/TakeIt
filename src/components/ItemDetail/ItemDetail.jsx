@@ -1,72 +1,75 @@
-import { useState, useContext } from 'react';
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
-import ItemCount from '../ItemCount/ItemCount';
-import CartContext from "../../Context/CartContext";
-import './ItemDetail.css'
-
+import ItemCount from "../ItemCount/ItemCount";
+import { CartContext } from "../../Context/CartContext";
+import "./ItemDetail.css";
 
 const ItemDetail = ({ item }) => {
-    const initial = 0;
-    const [itemsQty, setItemsQty]= useState(initial);
-    
-    const { cart, addItem } =useContext(CartContext);
-    
+  const initial = 0;
+  const [itemsQty, setItemsQty] = useState(initial);
 
-    const addToCart = () => {
-        console.log (`added to cart: ${itemsQty} items of the product ${item.id}`);
-        item.stock -=itemsQty;
-        setItemsQty(initial);
+  const { cart, addItem } = useContext(CartContext);
 
-        addItem (item, itemsQty) 
-    }
+  const addToCart = () => {
+    console.log(`added to cart: ${itemsQty} items of the product ${item.id}`);
+    item.stock -= itemsQty;
+    setItemsQty(initial);
 
-    const onAdd = (e) => {
-        e.preventDefault();
-        setItemsQty(itemsQty < item.stock ? itemsQty + 1 : itemsQty)
-    };
+    addItem(item, itemsQty);
+  };
 
-    const onSubstract = (e) => {
-        e.preventDefault();
-        setItemsQty(itemsQty > initial ? itemsQty - 1 : itemsQty)
-    };
+  const onAdd = (e) => {
+    e.preventDefault();
+    setItemsQty(itemsQty < item.stock ? itemsQty + 1 : itemsQty);
+  };
 
-   
+  const onSubstract = (e) => {
+    e.preventDefault();
+    setItemsQty(itemsQty > initial ? itemsQty - 1 : itemsQty);
+  };
 
+  return (
+    <div className="item" id={item.id}>
+      <img className="item-picture" src={item.picture} alt={item.name} />
+      <ItemCount
+        stock={item.stock}
+        value={itemsQty}
+        onAdd={onAdd}
+        onSubstract={onSubstract}
+      />
+      <button
+        type="button"
+        className="btn btn-primary btn-md shadow-lg"
+        hidden={!item.stock}
+        onClick={() => addToCart()}
+      >
+        Add to cart
+      </button>
 
-    return (
-        <div className="item" id={item.id} >
-            <img className="item-picture" src={item.picture} alt={item.name} />
-            <ItemCount stock={item.stock} value={itemsQty} onAdd={onAdd} onSubstract={onSubstract} />
-            <button type="button" className="btn btn-primary btn-md shadow-lg" hidden={!item.stock} onClick={() => addToCart()}>Add to cart</button>
-            
-            
-            <div className="card-body">
-                <h5 className="product-name">{item.name}</h5>
-                <div className="product-description shadow-sm">
-                    <p> Type : {item.Type}</p>
-                    <p> RAM : {item.ram}</p>
-                    <p> Core : {item.core}</p>
-                    <p> Screen :{item.screen_size}</p>
-                    <p> Stock :{item.stock}</p>
+      <div className="card-body">
+        <h5 className="product-name">{item.name}</h5>
+        <div className="product-description shadow-sm">
+          <p> Type : {item.Type}</p>
+          <p> RAM : {item.ram}</p>
+          <p> Core : {item.core}</p>
+          <p> Screen :{item.screen_size}</p>
+          <p> Stock :{item.stock}</p>
 
-                    <p className="price">Price:  {item.price_USD}$</p>
-                </div>
-                {/* <a href="#" className="btn btn-primary"></a> */}
-            </div> 
-            {
-                cart.length > 0 && 
-                <Link to="/cart" className="btn btn-primary btn-md" hidden={!item.stock}>Complete the purchase</Link>
-
-            }
-            
-
+          <p className="price">Price: {item.price_USD}$</p>
         </div>
-
-    );
-
-
-
-
+        {/* <a href="#" className="btn btn-primary"></a> */}
+      </div>
+      {cart.length > 0 && (
+        <Link
+          to="/cart"
+          className="btn btn-primary btn-md"
+          hidden={!item.stock}
+        >
+          Complete the purchase
+        </Link>
+      )}
+    </div>
+  );
 };
 
 export default ItemDetail;

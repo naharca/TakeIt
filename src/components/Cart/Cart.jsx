@@ -1,7 +1,7 @@
 import React from "react";
-import { useContext} from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
-import CartContext from "../../Context/CartContext";
+import { CartContext } from "../../Context/CartContext";
 import returnIcon from "../../assets/icons/returnIcon.png";
 import deleteIcon from "../../assets/icons/deleteIcon.png";
 import ItemCount from "../ItemCount/ItemCount";
@@ -17,7 +17,6 @@ function Cart() {
   const onSubstract = (item, quantity) => {
     context.removeItem(item, quantity);
   };
-  
 
   return (
     <div>
@@ -60,7 +59,7 @@ function Cart() {
                         onAdd(item, 1);
                       }}
                       onSubstract={() => {
-                        onSubstract(item,  0);
+                        onSubstract(item, 0);
                       }}
                       className="cart-input-number"
                     />
