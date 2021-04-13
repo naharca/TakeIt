@@ -43,7 +43,7 @@ const CartWidget = () => {
       </Link>
 
       <div className={`cart-widget-items-container ${active ? "active" : ""}`}>
-        <p>CART LIST ITEMS</p>
+        <p>Your Selection</p>
         <div>
           {context.cart.length === 0 ? (
             <p>No items yet</p>
