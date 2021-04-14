@@ -10,7 +10,7 @@ const ItemList = (props) => {
                 <h1>Products</h1>
                 <ul> {
                     props.items.map(
-                        item => <Item key={props.item.id} item={props.item} />
+                        item => <Item key={item.id} item={item} />
                     )
                 }
                 </ul>
