@@ -7,6 +7,8 @@ import productItems from "../productItems.json";
 import Home from "../components/Home/Home";
 import ItemDetailContainer from "../components/ItemDetailContainer/ItemDetailContainer";
 import Cart from "../components/Cart/Cart";
+import Checkout from "../components/Checkout/Checkout";
+import Orders from "../components/Orders/Orders"; 
 
 const RouterApp = () => {
   const [items, setItems] = useState([]);
@@ -30,6 +32,12 @@ const RouterApp = () => {
           </Route>
           <Route path="/category/:id">
             <ItemListContainer items={items} />
+          </Route>
+          <Route path="/orders">
+            <Orders />
+          </Route>
+          <Route path="/checkout">
+            <Checkout />
           </Route>
           <Route exact path="/Cart">
             <Cart />

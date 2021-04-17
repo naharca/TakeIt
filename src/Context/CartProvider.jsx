@@ -3,31 +3,20 @@ import { CartContext } from "./CartContext";
 
 const CartProvider = ({ defaultValue = [], children }) => {
   const [cart, setCart] = useState(defaultValue);
+  const [totalPrice, setTotalPrice] = useState(0);
   console.log(cart);
+  const addItem = ( item, quantity ) => {
+    setCart([
+      ...cart,
+      {item, quantity}
 
-  const addItem = (product, quantity) => {
-    let prod = cart.findIndex((item) => item.id === product.id);
-    if (prod !== -1) {
-      alert("This product has been already added");
-    } else {
-      setCart([
-        ...cart,
-        {
-          id: product.id,
-          name: product.name,
-          picture: product.picture,
-          Type: product.Type,
-          stock: product.stock,
-          price_USD: product.price_USD,
-          quantity: quantity,
-        },
-      ]);
-    }
+    ]);
   };
-  const removeItem = (id) => {
-    setCart(cart.filter((item) => item.id !== id));
 
-    console.log(`item removed using id  ${id}`);
+  const removeItem = (itemId) => {
+    setCart(cart.filter( re => re.item.id !== itemId));
+
+    console.log(`item removed using id  ${itemId}`);
   };
   const clear = () => {
     setCart([]);
@@ -43,6 +32,13 @@ const CartProvider = ({ defaultValue = [], children }) => {
       return false;
     }
   };
+
+  const Total = () => {
+    let total = cart.reduce((actual, current) => {
+        return (current.item.price_USD * current.quantity) + actual
+    }, 0);
+    setTotalPrice(total);
+}
 
   return (
     <CartContext.Provider
