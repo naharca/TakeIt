@@ -10,13 +10,20 @@ const ItemCart = ({ item, quantity, id }) => {
   return (
     <div className="row p-3">
       <div className="col-2">{`${item.picture}`}</div>
-      <div className="col-4"><h5>{`${item.Type} ${item.name}`}</h5></div>
-      <div className="col-2"><h5>{`${quantity}`}</h5></div>
-      <div className="col-2"><h5>{`${item.price_USD}`}</h5></div>
+      <div className="col-4">
+        <h5>{`${item.Type} ${item.name}`}</h5>
+      </div>
+      <div className="col-2">
+        <h5>{`${quantity}`}</h5>
+      </div>
+      <div className="col-2">
+        <h5>{`${item.price_USD}`}</h5>
+      </div>
       <div className="col-1">
-        <button className="btn delete-icon-btn"
+        <button
+          className="btn delete-icon-btn"
           onClick={() => removeItem(item.id)}
-          >
+        >
           <img src={deleteIcon} className="delete-icon" alt="delete" />
         </button>
       </div>

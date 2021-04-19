@@ -5,16 +5,12 @@ const CartProvider = ({ defaultValue = [], children }) => {
   const [cart, setCart] = useState(defaultValue);
   const [totalPrice, setTotalPrice] = useState(0);
   console.log(cart);
-  const addItem = ( item, quantity ) => {
-    setCart([
-      ...cart,
-      {item, quantity}
-
-    ]);
+  const addItem = (item, quantity) => {
+    setCart([...cart, { item, quantity }]);
   };
 
   const removeItem = (itemId) => {
-    setCart(cart.filter( re => re.item.id !== itemId));
+    setCart(cart.filter((re) => re.item.id !== itemId));
 
     console.log(`item removed using id  ${itemId}`);
   };
@@ -35,10 +31,10 @@ const CartProvider = ({ defaultValue = [], children }) => {
 
   const Total = () => {
     let total = cart.reduce((actual, current) => {
-        return (current.item.price_USD * current.quantity) + actual
+      return current.item.price_USD * current.quantity + actual;
     }, 0);
     setTotalPrice(total);
-}
+  };
 
   return (
     <CartContext.Provider

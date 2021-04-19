@@ -12,24 +12,26 @@ const ItemListContainer = () => {
   const getAll = () => {
     const db = getFirestore();
     const itemsCollection = db.collection("items");
-    itemsCollection.get().then((resp) => {
-      let response = resp.docs
-        .map((doc) => {
+    itemsCollection
+      .get()
+      .then((resp) => {
+        let response = resp.docs.map((doc) => {
           return {
-            ...doc.data(), id: doc.id
-          }
+            ...doc.data(),
+            id: doc.id,
+          };
         });
 
-      setItems(response);
-    }).catch((err) => {
-      console.error("Error: ", err);
-    });
+        setItems(response);
+      })
+      .catch((err) => {
+        console.error("Error: ", err);
+      });
   };
-
 
   useEffect(() => {
     if (id !== undefined) {
-      setItemsFiltered(items.filter(prod => prod.Type === id));
+      setItemsFiltered(items.filter((prod) => prod.Type === id));
     } else {
       setItemsFiltered(items);
     }

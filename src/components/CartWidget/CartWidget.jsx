@@ -5,20 +5,20 @@ import cartIcon from "../../assets/icons/cartIcon.png";
 import "./CartWidget.css";
 
 const CartWidget = () => {
-  const { cart } = useContext( CartContext );
-  let cant=0;
+  const { cart } = useContext(CartContext);
+  let cant = 0;
 
-  for (let i=0; i < cart.length; i++){
+  for (let i = 0; i < cart.length; i++) {
     cant = cant + cart[i].quantity;
-  };
- 
+  }
 
   return (
     <Link to="/cart" className="cart">
-      
       <div className="cart-widget">
-        { cant }
-      
+        <div className="cart-number">
+        {cant}
+        </div>
+
         <img
           src={cartIcon}
           className="cart-icon remove-bg"
@@ -27,7 +27,5 @@ const CartWidget = () => {
       </div>
     </Link>
   );
-
-  
 };
 export default CartWidget;
