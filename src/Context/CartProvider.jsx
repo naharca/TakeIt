@@ -28,25 +28,19 @@ const CartProvider = ({ defaultValue = [], children }) => {
       return false;
     }
   };
-
-  // const Total = () => {
-  //   let total = cart.map( c => {
-  //     return c.item.price_USD * c.quantity;
-  //   }, 0);
-  //   setTotalPrice(total);
-  // };
   const Total = () => {
     let total = 0;
-    for (let i = 0; cart.length > i; i++) {
-      total =
-        total + parseInt(cart[i].item.total_USD) * parseInt(cart[i].quantity);
+    for (let i = 0; i < cart.length; i++) {
+      total = total + cart[i].item.price_USD * cart[i].quantity;
     }
-    setTotalPrice(total);
+    return total
   };
-
   useEffect(() => {
-    Total();
-  }, [cart]);
+    setTotalPrice(Total());
+    console.log(totalPrice)
+  },[cart]);
+
+  
 
   return (
     <CartContext.Provider
