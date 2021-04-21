@@ -26,7 +26,7 @@
 /*BUTTONS*/
 
 .btn {
-  margin: 1rem;
+  margin: 1.5rem;
   background-color: rgba(51, 25, 122, 0.836);
   border-color: transparent;
 }
@@ -37,9 +37,10 @@
 }
 
 .btn-primary {
-  margin-top: 0.2rem;
+  margin-top: 3rem;
   border-color: transparent;
   border-radius: 1.8rem;
+
 }
 
 .remove-bg {
@@ -59,15 +60,10 @@
 .final-buttons {
   position: relative;
   display: flex;
-  margin-left: 35%;
+  top: 5vh;
+  margin-left: 20rem;
+
   
-  
-}
-.return-link img {
-  position: absolute;
-  height: 1.5rem;
-  width: 1.5rem;
-  align-items: initial;
 }
 
 .total {
@@ -75,6 +71,7 @@
   font-style: normal;
   font-weight: lighter;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  
 }
 .message {
   color: rgba(80, 76, 73, 0.952);

@@ -2,14 +2,13 @@ import { useContext } from "react";
 import deleteIcon from "../../assets/icons/deleteIcon.png";
 import { CartContext } from "../../Context/CartContext";
 
-const ItemCart = ({ item, quantity, id }) => {
+const ItemCart = ({ item, quantity }) => {
   console.log(item);
   console.log(quantity);
   const { removeItem } = useContext(CartContext);
 
   return (
     <div className="row p-3">
-      <div className="col-2">{`${item.picture}`}</div>
       <div className="col-4">
         <h5>{`${item.Type} ${item.name}`}</h5>
       </div>

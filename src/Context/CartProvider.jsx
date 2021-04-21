@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { CartContext } from "./CartContext";
 
 const CartProvider = ({ defaultValue = [], children }) => {
@@ -17,7 +17,7 @@ const CartProvider = ({ defaultValue = [], children }) => {
   const clear = () => {
     setCart([]);
 
-    console.log("Your cart its clean now");
+    console.log("Your cart is empty");
   };
 
   const isInCart = (id) => {
@@ -29,16 +29,28 @@ const CartProvider = ({ defaultValue = [], children }) => {
     }
   };
 
+  // const Total = () => {
+  //   let total = cart.map( c => {
+  //     return c.item.price_USD * c.quantity;
+  //   }, 0);
+  //   setTotalPrice(total);
+  // };
   const Total = () => {
-    let total = cart.reduce((actual, current) => {
-      return current.item.price_USD * current.quantity + actual;
-    }, 0);
+    let total = 0;
+    for (let i = 0; cart.length > i; i++) {
+      total =
+        total + parseInt(cart[i].item.total_USD) * parseInt(cart[i].quantity);
+    }
     setTotalPrice(total);
   };
 
+  useEffect(() => {
+    Total();
+  }, [cart]);
+
   return (
     <CartContext.Provider
-      value={{ cart, addItem, removeItem, clear, isInCart }}
+      value={{ cart, addItem, removeItem, clear, isInCart, totalPrice }}
     >
       {children}
     </CartContext.Provider>

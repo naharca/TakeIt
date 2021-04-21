@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import returnIcon from "../../assets/icons/returnIcon.png";
 import deleteIcon from "../../assets/icons/deleteIcon.png";
 import { Link } from "react-router-dom";
 import { getFirestore } from "../../firebase";
+import "../Orders/Orders.css";
 
 function Orders() {
   const [orders, setOrders] = useState([]);
@@ -51,33 +51,25 @@ function Orders() {
     getAll();
   }, []);
 
-  
-
   return (
     <div>
-      <div className="container">
-        <Link to="/cart" className="back-link">
-          <img src={returnIcon} className="back-link__icon" alt="" />
-          <span className="back-link__text">Back to the cart </span>
-        </Link>
-      </div>
       {orders.length === 0 ? (
         <h2 className="appear"> No orders yet</h2>
       ) : (
         <div className="orders appear">
-          <div className="orders__title">ORDERS</div>
+          <div className="orders-title"><h1>ORDER LIST</h1></div>
           {orders.map((order) => {
             return (
-              <ul className="order" key={order.id}>
+              <ul className="order-data" key={order.id}>
                 <button
                   onClick={() => {
                     deleteOrder(order.id);
                   }}
-                  className="order__delete"
+                  className="order-delete"
                 >
-                  <img src={deleteIcon} className="delete-icon" alt="" />
+                  <img src={deleteIcon} className="btn delete-icon-btn " alt="" />
                 </button>
-                <h4>ORDER</h4>
+                <h4>YOUR ORDER</h4>
                 <p className="order__id">({order.id}) </p>
                 <ul className="order__buyer">
                   <li>
@@ -99,26 +91,32 @@ function Orders() {
                   <span>Pr </span>
                   <span>Subtotal:</span>
                 </li>
-                {order.items.map((item) => {
+                {order.items.map(({ item, quantity }) => {
                   return (
-                    <li className="order__item" key={item.id}>
+                    <li className="order__item" key={item}>
                       <span> {item.name} </span>
-                      <span> {item.quantity}</span>
+                      <span> {quantity}</span>
                       <span> $ {item.price_USD} </span>
-                      <span> $ {item.price_USD * item.quantity}</span>
+                      <span> $ {item.price_USD * quantity}</span>
                     </li>
                   );
                 })}
-                <li className="order__total">
-                  <span>Total: </span> <span> $ {order.total}</span>{" "}
+                <li className="order-total">
+                  <span>Total: </span> <span> $ {order.total} </span>{" "}
                 </li>
               </ul>
             );
           })}
-          <button className={`btn--big ${orders.length > 0 ? "" : "disabled"}`}>
+          <div className="container">
+          <Link to="/cart" className="btn btn-primary">
+            <span className="back-link__text">BACK TO THE CART</span>
+          </Link>
+
+          <button className={`btn btn-primary ${orders.length > 0 ? "" : "disabled"}`}>
             {" "}
-            PAY ORDERS{" "}
+            PAY MY ORDERS{" "}
           </button>
+          </div>
         </div>
       )}
     </div>

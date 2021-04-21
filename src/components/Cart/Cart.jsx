@@ -16,7 +16,7 @@ const Cart = () => {
   return (
     <div className="container">
       <div>
-        <h1>Your Cart</h1>
+        <h1>YOUR CART</h1>
         <div className="card w-100 message-card">
           {cart.length === 0 ? (
             <h5 className="message">
@@ -30,7 +30,6 @@ const Cart = () => {
       <h3 className="total">$ {total} USD</h3>
 
       <div className="final-buttons">
-        
         <button className="btn btn-primary " onClick={() => clear()}>
           Clear Cart
         </button>
@@ -39,13 +38,13 @@ const Cart = () => {
             Back to List
           </button>
         </Link>
-        <Link to="/checkout" className={` ${cart.length === 0 ? 'disabled' : ''}`}  >
-        <button className="btn btn-primary">
-        Go To Checkout
-        </button>
+        <Link
+          to="/checkout"
+          className={` ${cart.length === 0 ? "disabled" : ""}`}
+        >
+          <button className="btn btn-primary">Go To Checkout</button>
         </Link>
       </div>
-
     </div>
   );
 };

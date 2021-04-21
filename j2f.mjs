@@ -17,23 +17,25 @@ firebase.initializeApp({
 
 let db = firebase.firestore();
 
-let items = [
+// let items = [
+
+
   
     
-     {
-      "id": "product-6",
-      "name": "TEST ",
-      "Type": "Notebook",
-      "ram": "8GB",
-      "core": "Ryzen 5",
-      "screen_size": "15 inch",
-      "price_USD": 850,
-      "stock": 5,
-      "picture": "https://i.blogs.es/ffc00c/acer-nitro-5-1-1/450_1000.jpg"
-    }
+//   //    {
+//   //     "id": "product-6",
+//   //     "name": "TEST ",
+//   //     "Type": "Notebook",
+//   //     "ram": "8GB",
+//   //     "core": "Ryzen 5",
+//   //     "screen_size": "15 inch",
+//   //     "price_USD": 850,
+//   //     "stock": 5,
+//   //     "picture": "https://i.blogs.es/ffc00c/acer-nitro-5-1-1/450_1000.jpg"
+//   //   }
 
    
-  ];
+//   // ];
 
 
 

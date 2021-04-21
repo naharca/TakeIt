@@ -19,20 +19,13 @@ function Checkout(props) {
   const createOrder = () => {
     const db = getFirestore();
 
-    let items = context.cart.map((item, quantity) => {
-      return {
-        id: item.id,
-        title: item.Type,
-        quantity: quantity,
-        price: item.price_USD,
-      };
-    });
+    let items = context.cart;
 
     const newOrder = {
       buyer,
       items,
       date: firebase.firestore.Timestamp.fromDate(new Date()),
-      total: context.Total,
+      total: context.totalPrice,
     };
 
     const orders = db.collection("orders");
@@ -60,13 +53,13 @@ function Checkout(props) {
 
   return (
     <div>
-        <div className="container">
-          <Link to="/cart" className="back-link">
-            <span className="btn btn-primary ">Back to the cart </span>
-          </Link>
-        </div>
+      <div className="container">
+        <Link to="/cart" className="back-link">
+          <span className="btn btn-primary ">BACK TO THE CART</span>
+        </Link>
+      </div>
       <div className="checkout appear" hidden={context.cart.length === 0}>
-        <div className="checkout__title">BILLING ADDRESS</div>
+        <div className="check-order">BILLING ADDRESS</div>
         <input
           type="text"
           name="name"
@@ -92,7 +85,7 @@ function Checkout(props) {
         />
         <label htmlFor="email">Email</label>
 
-        <div className="checkout__title">REVIEW YOUR ORDER</div>
+        <div className="check-order">CHECK YOUR ORDER</div>
         <ul className="checkout-order">
           <li className="checkout-order__head">
             <span>Title</span>
@@ -100,9 +93,9 @@ function Checkout(props) {
             <span>Price </span>
             <span>Subtotal:</span>
           </li>
-          {context.cart.map(({ item, id, price_USD, Type, quantity }) => {
+          {context.cart.map(({ item, quantity }) => {
             return (
-              <li className="checkout-order__item" key={id}>
+              <li className="checkout-order__item" key={item}>
                 <span> {item.name} </span>
                 <span> {quantity}</span>
                 <span> $ {item.price_USD} </span>
@@ -111,7 +104,7 @@ function Checkout(props) {
             );
           })}
           <li className="checkout-order__total">
-            <span>Total: </span> <span> $ {context.total}</span>{" "}
+            <span>Total: </span> <span> $ {context.totalPrice} </span>{" "}
           </li>
         </ul>
         <Link
@@ -126,9 +119,8 @@ function Checkout(props) {
           }`}
           onClick={createOrder}
         >
-          <button className="btn btn-primary">PLACE ORDER NOW</button>
+          <button className="btn btn-primary">PLACE YOUR ORDER</button>
         </Link>
-        
       </div>
     </div>
   );

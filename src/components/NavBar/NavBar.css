@@ -5,13 +5,20 @@ p {
 }
 /*NAVBAR*/
 .navbar {
+  position: relative;
   display: flex;
-  height: fit-content;
+  height: auto;
   background-color: transparent;
-  margin-top: 0;
-  padding: 0.5rem;
+  margin: 0;
   font-size: 1.5rem;
 }
+/* .navbar {
+  position: absolute;
+  height: fit-content;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+
+} */
 
 .remove-bg {
   filter: brightness(1.1);
@@ -23,6 +30,7 @@ p {
   justify-content: space-between;
   font-family: fantasy;
   font-weight: 200;
+  margin: 0.5rem;
   color: rgba(74, 24, 121, 0.911);
 }
 
