@@ -5,7 +5,7 @@ import { CartContext } from "../../Context/CartContext";
 import "./ItemDetail.css";
 
 const ItemDetail = ({ item }) => {
-  const initial = 0;
+  const initial = 1;
   const [itemsQty, setItemsQty] = useState(initial);
 
   const { cart, addItem } = useContext(CartContext);

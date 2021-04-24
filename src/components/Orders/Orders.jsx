@@ -70,8 +70,8 @@ function Orders() {
                   <img src={deleteIcon} className="btn delete-icon-btn " alt="" />
                 </button>
                 <h4>YOUR ORDER</h4>
-                <p className="order__id">({order.id}) </p>
-                <ul className="order__buyer">
+                <p className="order-id">({order.id}) </p>
+                <ul className="buyer">
                   <li>
                     <b>Name: </b> {order.buyer.name}
                   </li>
@@ -85,7 +85,7 @@ function Orders() {
                     <b>Date: </b> {formatDate(order.date)}
                   </li>
                 </ul>
-                <li className="order__head">
+                <li className="order-details">
                   <span>Title</span>
                   <span>Qty</span>
                   <span>Pr </span>
@@ -93,7 +93,7 @@ function Orders() {
                 </li>
                 {order.items.map(({ item, quantity }) => {
                   return (
-                    <li className="order__item" key={item}>
+                    <li className="order-item" key={item}>
                       <span> {item.name} </span>
                       <span> {quantity}</span>
                       <span> $ {item.price_USD} </span>
