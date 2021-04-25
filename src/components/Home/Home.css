@@ -10,3 +10,10 @@
   font-size: 1.5rem;
   color: rgba(236, 229, 229, 0.904);
 }
+.home-title{
+  color:rgba(241, 107, 12, 0.952);
+  margin:  0.5rem 0 5rem 0;
+  font-style: normal;
+  font-weight: 900;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}

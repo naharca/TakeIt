@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import deleteIcon from "../../assets/icons/deleteIcon.png";
 import { Link } from "react-router-dom";
 import { getFirestore } from "../../firebase";
-import "../Orders/Orders.css";
+import "./Orders.css";
 
 function Orders() {
   const [orders, setOrders] = useState([]);
@@ -57,20 +57,28 @@ function Orders() {
         <h2 className="appear"> No orders yet</h2>
       ) : (
         <div className="orders appear">
-          <div className="orders-title"><h1>ORDER LIST</h1></div>
+          <div className="orders-title">
+            <h1>ORDER LIST</h1>
+          </div>
           {orders.map((order) => {
             return (
               <ul className="order-data" key={order.id}>
-                <button
-                  onClick={() => {
-                    deleteOrder(order.id);
-                  }}
-                  className="order-delete"
-                >
-                  <img src={deleteIcon} className="btn delete-icon-btn " alt="" />
-                </button>
-                <h4>YOUR ORDER</h4>
-                <p className="order-id">({order.id}) </p>
+                <div className="order-header">
+                  <h4>YOUR ORDER</h4>
+                  <p className="order-id">({order.id}) </p>
+                  <button
+                    onClick={() => {
+                      deleteOrder(order.id);
+                    }}
+                    className="btn delete-btn"
+                  >
+                    <img
+                      src={deleteIcon}
+                      className="delete-icon"
+                      alt="delete"
+                    />
+                  </button>
+                </div>
                 <ul className="buyer">
                   <li>
                     <b>Name: </b> {order.buyer.name}
@@ -107,15 +115,19 @@ function Orders() {
               </ul>
             );
           })}
-          <div className="container">
-          <Link to="/cart" className="btn btn-primary">
-            <span className="back-link__text">BACK TO THE CART</span>
-          </Link>
+          <div className="final-buttons">
+            <Link to="/cart" className="btn btn-primary">
+              <span className="back-link__text">Back to The Cart</span>
+            </Link>
 
-          <button className={`btn btn-primary ${orders.length > 0 ? "" : "disabled"}`}>
-            {" "}
-            PAY MY ORDERS{" "}
-          </button>
+            <button
+              className={`btn btn-primary ${
+                orders.length > 0 ? "" : "disabled"
+              }`}
+            >
+              {" "}
+              Pay My Order{" "}
+            </button>
           </div>
         </div>
       )}

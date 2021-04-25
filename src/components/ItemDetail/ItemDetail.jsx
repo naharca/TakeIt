@@ -30,6 +30,7 @@ const ItemDetail = ({ item }) => {
 
   return (
     <div className="item" id={item.id}>
+      <h5 className="product-name">{item.name}</h5>
       <img className="item-picture" src={item.picture} alt={item.name} />
       <ItemCount
         stock={item.stock}
@@ -47,8 +48,7 @@ const ItemDetail = ({ item }) => {
       </button>
 
       <div className="card-body">
-        <h5 className="product-name">{item.name}</h5>
-        <div className="product-description shadow-sm">
+        <div className="product-description">
           <p> Type : {item.Type}</p>
           <p> RAM : {item.ram}</p>
           <p> Core : {item.core}</p>
@@ -57,7 +57,6 @@ const ItemDetail = ({ item }) => {
 
           <p className="price">Price: {item.price_USD}$</p>
         </div>
-        {/* <a href="#" className="btn btn-primary"></a> */}
       </div>
       {cart.length > 0 && (
         <Link

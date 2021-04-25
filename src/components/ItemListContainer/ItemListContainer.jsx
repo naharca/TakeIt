@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-//import productItems from "../../productItems.json";
 import ItemList from "../ItemList/ItemList";
 import { getFirestore } from "../../firebase.js";
+import "./ItemListContainer.css";
 
 const ItemListContainer = () => {
   const [items, setItems] = useState([]);
@@ -42,7 +42,7 @@ const ItemListContainer = () => {
   }, []);
 
   return (
-    <div className="container">
+    <div className="container-list">
       <ItemList items={itemsFiltered} />
     </div>
   );

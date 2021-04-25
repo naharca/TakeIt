@@ -55,7 +55,7 @@ function Checkout(props) {
     <div>
       <div className="container">
         <Link to="/cart" className="back-link">
-          <span className="btn btn-primary ">BACK TO THE CART</span>
+          <span className="btn btn-primary ">Back to The Cart</span>
         </Link>
       </div>
       <div className="checkout appear" hidden={context.cart.length === 0}>
@@ -119,7 +119,7 @@ function Checkout(props) {
           }`}
           onClick={createOrder}
         >
-          <button className="btn btn-primary">PLACE YOUR ORDER</button>
+          <button className="btn btn-primary checkout-buttons">Place Order</button>
         </Link>
       </div>
     </div>

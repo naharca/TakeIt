@@ -1,3 +1,8 @@
+
+p{ 
+  font-size: 1rem;
+  
+  }
 .counter-buttons-container {
   background-color: rgba(128, 128, 128, 0.39);
   width: 9rem;
@@ -35,12 +40,7 @@
   font-weight: bolder;
 }
 
-/*COUNTER BUTTONS*/
 
 
-/*ALERT BOX*/
-p{ 
-font-size: 1rem;
 
-}
 

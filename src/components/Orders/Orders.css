@@ -1,107 +1,94 @@
 .orders {
-    max-width: 30rem;
-    padding: 1rem;
-    margin: 1rem auto;
-    border: solid 1px var(--color-alpha);
-    border-top: 3px solid var(--color-alpha);
-    position: relative;
-    text-align: left;
-    transition: all 0.3s ease;
-  }
-  
-  .orders-title {
-    text-transform: uppercase;
-    font-weight: 700;
-    margin: 1rem 7.3rem 2rem;
-    
-  }
-  
-  .order-data {
-    display: grid;
-    justify-items: start;
-    list-style-type: none;
-    margin: 1rem 0;
-    padding: 0;
-    position: relative;
-    box-shadow: 0 0 0.5rem 0.5rem rgba(235, 235, 235, 0.514);
-    margin: 1rem 0;
-    padding: 0 1rem;
-  }
-  
-  .order h4 {
-    margin-bottom: 0;
-  }
-  
-  .order-id {
-    font-size: 0.8rem;
-    border-bottom: solid 1px var(--color-alpha);
-    width: 100%;
-    padding: 0.25rem 0;
-    margin: 0;
-    color: lightgrey;
-  }
-  
-  .buyer {
-    margin: 1rem 0;
-    padding: 0;
-    list-style: none;
-    font-size: 0.9rem;
-  }
-  
-  .order-delete {
-    position: absolute;
-    top: 1.5rem;
-    right: 0.5rem;
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-  }
-  .delete-icon-btn {
-    border-radius: 50%;
-    width: 3rem;
-    height: 3rem;
-  }
+  max-width: 30rem;
+  padding: 1rem;
+  margin: 1rem auto;
+  border: solid 1px var(--color-alpha);
+  border-top: 3px solid var(--color-alpha);
+  position: relative;
+  text-align: left;
+  transition: all 0.3s ease;
+}
 
- 
-  
-  .order-details,
-  .order-item {
-    display: grid;
-    grid-template-columns: 3fr 1fr 1fr 1fr;
-    width: 100%;
-    padding: 0.5rem 0;
-    gap: 15px 10px;
-  }
-  
-  .order-item {
-    padding-left: 0.5rem;
-  }
-  
-  .order-details {
-    font-weight: 700;
-    border-bottom: 1px solid var(--color-gamma);
-  }
-  
-  .order-total {
-    border-top: 0.5 solid var(--color-gamma);
-    padding: 0.5rem 0;
-    font-weight: 700;
-    width: 100%;
-    text-align: right;
-  }
-  
-  .orders .btn--big {
-    text-decoration: none;
-    line-height: 2rem;
-    margin-bottom: 0;
-    margin: 2rem 0 0 0;
-  }
-  
-  /* .orders .btn--big:disabled {
-    cursor: not-allowed;
-  } */
-  .container {
-    position: relative;
-    left:5%;
-    
-  }
+.orders-title {
+  text-transform: uppercase;
+  text-align: center;
+  margin: 1rem 3rem 2rem;
+  color: rgba(241, 107, 12, 0.952);
+  text-shadow: 0 0.3rem 0.3rem rgba(76, 75, 75, 0.452);
+  font-style: normal;
+  font-weight: 600;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.order-data {
+  display: grid;
+  justify-items: start;
+  list-style-type: none;
+  margin: 1rem 0;
+  padding: 0;
+  position: relative;
+  box-shadow: 0 0 0.5rem 0.5rem rgba(235, 235, 235, 0.514);
+  margin: 1rem 0;
+  padding: 0 1rem;
+}
+.order-header {
+  position: relative;
+  margin-top: 2rem;
+}
+.order h4 {
+  margin: 0;
+}
+
+.order-id {
+  font-size: 0.8rem;
+  border-bottom: solid 1px var(--color-alpha);
+  width: 100%;
+  padding: 0.25rem 0;
+  margin: 0;
+  color: lightgrey;
+}
+
+.buyer {
+  margin: 1rem 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.9rem;
+}
+
+.order-details,
+.order-item {
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr 1fr;
+  width: 100%;
+  padding: 0.5rem 0;
+  gap: 15px 10px;
+}
+
+.order-item {
+  padding-left: 0.5rem;
+}
+
+.order-details {
+  font-weight: 700;
+  border-bottom: 1px solid var(--color-gamma);
+}
+
+.order-total {
+  border-top: 0.5 solid var(--color-gamma);
+  padding: 0.5rem 0;
+  font-weight: 700;
+  width: 100%;
+  text-align: right;
+}
+
+.delete-btn {
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  margin: -6rem 0 0.5rem 22rem;
+}
+
+.delete-icon {
+  position: relative;
+  height: 80%;
+}

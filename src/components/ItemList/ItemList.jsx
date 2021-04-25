@@ -7,7 +7,7 @@ const ItemList = (props) => {
         <>
             <div className='item-list'>
                 <hr />
-                <h1>PRODUCTS</h1>
+                <h1 className="products-section-title">PRODUCTS</h1>
                 <ul> {
                     props.items.map(
                         item => <Item key={item.id} item={item} />

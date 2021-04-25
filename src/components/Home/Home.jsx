@@ -6,7 +6,7 @@ function Home() {
         
     
             <div className="jumbotron  shadow-lg">
-                <h1>Welcome to Take - IT</h1>
+                <h1 className="home-title">Welcome to Take - IT</h1>
                 <p className="welcoming-text">Here you'll find the better options, sales offers and technologycal solutions</p>
                 <p><Link to="/" className="btn btn-primary btn-lg">Just Take-IT</Link></p>
             </div>

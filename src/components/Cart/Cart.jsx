@@ -14,9 +14,10 @@ const Cart = () => {
   }
 
   return (
-    <div className="container">
+    <div className="container-list">
       <div>
-        <h1>YOUR CART</h1>
+        <hr />
+        <h1 className="cart-section-text">YOUR CART</h1>
         <div className="card w-100 message-card">
           {cart.length === 0 ? (
             <h5 className="message">
@@ -42,7 +43,7 @@ const Cart = () => {
           to="/checkout"
           className={` ${cart.length === 0 ? "disabled" : ""}`}
         >
-          <button className="btn btn-primary">Go To Checkout</button>
+          <button className="btn btn-primary">Go to Checkout</button>
         </Link>
       </div>
     </div>
