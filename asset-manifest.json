@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/TakeIt/static/css/main.77d2cfce.chunk.css",
+    "main.js": "/TakeIt/static/js/main.4fbf2cf2.chunk.js",
+    "main.js.map": "/TakeIt/static/js/main.4fbf2cf2.chunk.js.map",
+    "runtime-main.js": "/TakeIt/static/js/runtime-main.12fc4bcb.js",
+    "runtime-main.js.map": "/TakeIt/static/js/runtime-main.12fc4bcb.js.map",
+    "static/js/2.07059cf6.chunk.js": "/TakeIt/static/js/2.07059cf6.chunk.js",
+    "static/js/2.07059cf6.chunk.js.map": "/TakeIt/static/js/2.07059cf6.chunk.js.map",
+    "static/js/3.2266c6c0.chunk.js": "/TakeIt/static/js/3.2266c6c0.chunk.js",
+    "static/js/3.2266c6c0.chunk.js.map": "/TakeIt/static/js/3.2266c6c0.chunk.js.map",
+    "index.html": "/TakeIt/index.html",
+    "static/css/main.77d2cfce.chunk.css.map": "/TakeIt/static/css/main.77d2cfce.chunk.css.map",
+    "static/js/2.07059cf6.chunk.js.LICENSE.txt": "/TakeIt/static/js/2.07059cf6.chunk.js.LICENSE.txt",
+    "static/media/take_it.d20a2996.svg": "/TakeIt/static/media/take_it.d20a2996.svg",
+    "static/media/take_it_lg.b0db5c24.png": "/TakeIt/static/media/take_it_lg.b0db5c24.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.12fc4bcb.js",
+    "static/js/2.07059cf6.chunk.js",
+    "static/css/main.77d2cfce.chunk.css",
+    "static/js/main.4fbf2cf2.chunk.js"
+  ]
+}
