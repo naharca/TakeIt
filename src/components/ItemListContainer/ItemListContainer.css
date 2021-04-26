@@ -1,8 +1,7 @@
 .container-list {
-    position: relative;
-    justify-content: center;
-    align-items: center;
+  position: relative;
+  justify-content: center;
+  align-items: center;
   font-family: fantasy;
   color: rgba(238, 106, 29, 0.87);
-
 }

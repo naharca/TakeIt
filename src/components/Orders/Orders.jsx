@@ -14,7 +14,6 @@ function Orders() {
       .get()
       .then((querySnapshot) => {
         if (querySnapshot.size === 0) {
-          console.log("No orders yet");
         }
         let snapshot = querySnapshot.docs.map((doc) => {
           return { ...doc.data(), id: doc.id };
@@ -22,11 +21,8 @@ function Orders() {
         setOrders(snapshot);
       })
       .catch((error) => {
-        console.error("Error:", error);
       })
-      .finally(() => {
-        console.log("Orders Loaded");
-      });
+      .finally(() => {});
   };
 
   function formatDate(dateFirestore) {
@@ -101,7 +97,7 @@ function Orders() {
                 </li>
                 {order.items.map(({ item, quantity }) => {
                   return (
-                    <li className="order-item" key={item}>
+                    <li className="order-item" key={item.name}>
                       <span> {item.name} </span>
                       <span> {quantity}</span>
                       <span> $ {item.price_USD} </span>

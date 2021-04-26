@@ -32,8 +32,6 @@ function Checkout(props) {
     orders
       .add(newOrder)
       .then((resp) => {
-        console.log("Order created");
-
         let batch = db.batch();
 
         let itemsRef = db.collection("items");
@@ -46,9 +44,7 @@ function Checkout(props) {
           setBuyer({ name: "", phone: "", email: "" });
         });
       })
-      .catch((err) => {
-        console.error("Error: ", err);
-      });
+      .catch((err) => {});
   };
 
   return (
@@ -95,7 +91,7 @@ function Checkout(props) {
           </li>
           {context.cart.map(({ item, quantity }) => {
             return (
-              <li className="checkout-order__item" key={item}>
+              <li className="checkout-order__item" key={item.name}>
                 <span> {item.name} </span>
                 <span> {quantity}</span>
                 <span> $ {item.price_USD} </span>
@@ -119,7 +115,9 @@ function Checkout(props) {
           }`}
           onClick={createOrder}
         >
-          <button className="btn btn-primary checkout-buttons">Place Order</button>
+          <button className="btn btn-primary checkout-buttons">
+            Place Order
+          </button>
         </Link>
       </div>
     </div>

@@ -25,7 +25,6 @@ const ItemListContainer = () => {
         setItems(response);
       })
       .catch((err) => {
-        console.error("Error: ", err);
       });
   };
 

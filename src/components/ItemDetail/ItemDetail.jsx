@@ -11,7 +11,6 @@ const ItemDetail = ({ item }) => {
   const { cart, addItem } = useContext(CartContext);
 
   const addToCart = () => {
-    console.log(`added to cart: ${itemsQty} items of the product ${item.id}`);
     item.stock -= itemsQty;
     setItemsQty(initial);
 

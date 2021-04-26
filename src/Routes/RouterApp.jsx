@@ -7,15 +7,14 @@ import Home from "../components/Home/Home";
 import ItemDetailContainer from "../components/ItemDetailContainer/ItemDetailContainer";
 import Cart from "../components/Cart/Cart";
 import Checkout from "../components/Checkout/Checkout";
-import Orders from "../components/Orders/Orders"; 
+import Orders from "../components/Orders/Orders";
 
 const RouterApp = () => {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
     new Promise((resolve, reject) => {
-      setTimeout(() => {
-      }, 0.0);
+      setTimeout(() => {}, 0.0);
     }).then((result) => setItems(result));
   });
 

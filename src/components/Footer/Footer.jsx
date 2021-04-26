@@ -55,7 +55,6 @@ function Footer() {
                     <Link to="/" className="text-muted  mb-1">
                       Sign In
                     </Link>
-                    
                   </li>
                 </ul>
               </div>

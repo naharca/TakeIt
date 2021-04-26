@@ -3,14 +3,14 @@ import CartProvider from './Context/CartProvider';
 import RouterApp from './Routes/RouterApp';
 
 function App() {
- 
+
 
   return (
     <div className="App">
-      <CartProvider>  
+      <CartProvider>
         <RouterApp />
       </CartProvider>
-    
+
     </div>
   );
 }

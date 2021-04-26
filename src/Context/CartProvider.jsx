@@ -4,20 +4,15 @@ import { CartContext } from "./CartContext";
 const CartProvider = ({ defaultValue = [], children }) => {
   const [cart, setCart] = useState(defaultValue);
   const [totalPrice, setTotalPrice] = useState(0);
-  console.log(cart);
   const addItem = (item, quantity) => {
     setCart([...cart, { item, quantity }]);
   };
 
   const removeItem = (itemId) => {
     setCart(cart.filter((re) => re.item.id !== itemId));
-
-    console.log(`item removed using id  ${itemId}`);
   };
   const clear = () => {
     setCart([]);
-
-    console.log("Your cart is empty");
   };
 
   const isInCart = (id) => {
@@ -33,14 +28,11 @@ const CartProvider = ({ defaultValue = [], children }) => {
     for (let i = 0; i < cart.length; i++) {
       total = total + cart[i].item.price_USD * cart[i].quantity;
     }
-    return total
+    return total;
   };
   useEffect(() => {
     setTotalPrice(Total());
-    console.log(totalPrice)
-  },[cart]);
-
-  
+  }, [cart]);
 
   return (
     <CartContext.Provider
