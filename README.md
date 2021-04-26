@@ -28,7 +28,7 @@ npm run test
 👤 **Nahara Castillo**
 
 * Github: [@naharca](https://github.com/naharca)
-* LinkedIn: [https://www.linkedin.com/in/naharacastillo/](https://linkedin.com/in/www.linkedin.com/in/naharacastillo/)
+* LinkedIn: [https://www.linkedin.com/in/naharacastillo/](https://www.linkedin.com/in/naharacastillo/)
 
 ## Show your support
 
