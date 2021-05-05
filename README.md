@@ -1,4 +1,4 @@
-<h1 align="center">Welcome to TakeIt 👋</h1>
+<h1 align="center">Hi, Welcome to TakeIt 👋</h1>
 
 
 > Ecommerce simulator, builded with React and Firebase as a project for an educational course.
